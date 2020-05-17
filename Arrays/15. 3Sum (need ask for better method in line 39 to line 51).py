@@ -17,29 +17,26 @@
 class Solution(object):
 
     def threeSum(self, nums):        
-        
-        lst = []
-        for i in range(len(nums)):
-            lst.append([i, nums[i]])            
-        lst = sorted(lst, key = lambda x: x[1])
+                
+        lst = sorted(nums)
         
         res = []
         for i in range(len(lst)):
             
-            if i > 0 and lst[i][1] == lst[i - 1][1]:
+            if i > 0 and lst[i] == lst[i - 1]:
                 continue
                         
-            v1 = lst[i][1]                        
-            tgt = -lst[i][1]
+            v1 = lst[i]                     
+            tgt = -lst[i]
             _dict = {}
             
             l = i + 1
             r = len(lst) - 1
                                     
             while (l < r):
-                _sum = lst[l][1] + lst[r][1]
+                _sum = lst[l] + lst[r]
                 if _sum == tgt:
-                    _dict[lst[l][1]] = lst[r][1]
+                    _dict[lst[l]] = lst[r]
                     r -= 1
                     l += 1
                 elif _sum < tgt:
@@ -51,5 +48,4 @@ class Solution(object):
                 res.append([v1, v2, v3])
                           
         return res
-        
         
