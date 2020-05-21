@@ -1,4 +1,4 @@
-# 1. brute force: traversing all the points p in A, and if pi > pi -1 and p > pi + 1, p is a mountain of 3.ArithmeticError
+# 1. brute force: traversing all the points p in A, and if pi > pi -1 and p > pi + 1, p is a mountain of 3
 # so if I maintain two lists call right and left:
 # In right, ri means the number of continous smaller nodes. i.e. ri+1 > ri + 1 > ri + 2....
 #   And we build from the end of the list, r n - 1, which is 0, then if rj > rj+1, rj = right[j] + 1, else right[j] = 0

@@ -1,41 +1,17 @@
-class Node(object):
-    
-    def __init__(self, val, pre, nxt):
-        self.nxt = nxt
-        self.pre = pre
-        self.val = val
+def sort(arr):
+  N = len(arr);
+  for i in range(N): #outer loop
+    print(i)
+    for j in range(N-1, i, -1):
+        print (j)
+        if arr[j] < arr[j-1]:
+            #swaps two elements
+            arr[j], arr[j-1] = arr[j-1], arr[j]
+
+    print (arr)
+
         
-    
-    def moveToHead(self, head):
-        if self.pre is not None:
-            self.pre.nxt = self.nxt
-            if self.nxt is not None:
-                self.nxt.pre = self.pre
-        self.nxt = head 
-        self.pre = None
-        return self
+arr = [3, 2, 2 ,9, 4, 3, 2, 4]
 
+sort(arr)
 
-def createList():
-
-    head = None
-    
-    for i in range(0, 10):
-        node = Node(i, None, None)
-        if i != 0:
-            print("b\n")
-            head.pre = node
-            head = node.moveToHead(head)
-        else:
-            print("a\n")
-            head = node
-
-    shift = head
-    for i in range(0, 10):
-        print(shift.val)
-        print("\n")
-        shift = shift.nxt
-
-
-
-createList()

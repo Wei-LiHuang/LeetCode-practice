@@ -1,5 +1,3 @@
-# contiguous sub-array
-
 class Solution(object):
     
     def numSubarrayProductLessThanK(self, a, k):
