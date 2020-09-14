@@ -1,0 +1,3 @@
+stuck on topics:
+	knap sack prob
+	union find
